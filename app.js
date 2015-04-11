@@ -10,7 +10,17 @@ var users = require('./routes/users');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://rac1511:rac1511@ds061651.mongolab.com:61651/usercollection');
+var db = monk(dbPath);
+
+var config = { 
+      "USER"    : "",
+      "PASS"    : "",
+      "HOST"    : "ec2-52-8-15-161.us-west-1.compute.amazonaws.com",
+      "PORT"    : "27017",
+      "DATABASE" : "userdata"
+     };
+
+var dbPath  = "mongodb://"+config.USER + ":"+     config.PASS + "@"+     config.HOST + ":"+    config.PORT + "/"+     config.DATABASE;
 
 var app = express();
 
