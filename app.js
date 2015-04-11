@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
+var db = monk('mongodb://rac1511:rac1511@ds061651.mongolab.com:61651/usercollection');
 
 var app = express();
 
